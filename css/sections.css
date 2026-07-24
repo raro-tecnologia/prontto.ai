@@ -77,3 +77,62 @@
 .footer-contact a:hover {
     color: var(--amber);
 }
+
+/* Hero */
+.hero {
+    position: relative;
+    background: radial-gradient(120% 100% at 15% 0%, var(--ink-soft) 0%, var(--ink-deep) 60%);
+    color: #fff;
+    padding: var(--space-2xl) 0;
+    overflow: hidden;
+}
+
+.hero::after {
+    /* brilho ambar difuso atras da cena de chat */
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    width: 46%;
+    height: 70%;
+    background: radial-gradient(circle, var(--amber-glow) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.hero h1 {
+    margin-bottom: var(--space-md);
+    text-wrap: balance;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--amber);
+}
+
+.hero-sub {
+    font-size: 1.12rem;
+    color: var(--text-on-dark);
+    max-width: 34rem;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.hero-note {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+}

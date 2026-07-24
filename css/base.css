@@ -147,3 +147,12 @@ a:focus-visible {
     outline: 3px solid var(--amber);
     outline-offset: 3px;
 }
+
+/* Quem pediu menos movimento nao recebe rolagem suave nem transicao de botao. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .btn { transition: none; }
+
+    .btn--primary:hover { transform: none; }
+}

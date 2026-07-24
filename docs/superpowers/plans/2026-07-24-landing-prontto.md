@@ -248,6 +248,15 @@ a:focus-visible {
     outline: 3px solid var(--amber);
     outline-offset: 3px;
 }
+
+/* Quem pediu menos movimento nao recebe rolagem suave nem transicao de botao. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .btn { transition: none; }
+
+    .btn--primary:hover { transform: none; }
+}
 ```
 
 - [ ] **Step 5: Criar `css/sections.css` com cabeçalho e rodapé**
@@ -377,7 +386,9 @@ O arquivo já é um elemento `<svg>` completo, com `viewBox`, `fill="currentColo
     <header class="site-header">
         <div class="container">
             <a class="brand" href="/" aria-label="Prontto, página inicial">
-                <!-- COLE AQUI o conteudo completo de logo/prontto-wordmark.svg -->
+                <!-- COLE AQUI o conteudo completo de logo/prontto-wordmark.svg,
+                     acrescentando aria-hidden="true" e removendo role e aria-label:
+                     o nome acessivel ja vem do link que o envolve -->
             </a>
             <a class="btn btn--primary header-cta"
                href="https://wa.me/554431701799?text=Oi!%20Vim%20pelo%20site%20do%20Prontto%20e%20quero%20saber%20mais."
@@ -411,10 +422,10 @@ O arquivo já é um elemento `<svg>` completo, com `viewBox`, `fill="currentColo
 </html>
 ```
 
-- [ ] **Step 7: Criar `css/chat.css` vazio para o `<link>` não dar 404**
+- [ ] **Step 7: Criar `css/chat.css` como marcador, para o `<link>` não dar 404**
 
 ```css
-/* Cena de conversa animada do hero. Implementada na Task 3. */
+/* Cena de conversa animada do hero. */
 ```
 
 - [ ] **Step 8: Verificar os requisitos verificáveis por texto**

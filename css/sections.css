@@ -136,3 +136,90 @@
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.55);
 }
+
+/* Blocos claros */
+.band {
+    padding: var(--space-2xl) 0;
+}
+
+.band--alt {
+    background-color: var(--paper-alt);
+}
+
+.band-head {
+    max-width: 40rem;
+    margin-bottom: var(--space-xl);
+}
+
+.band-head p {
+    color: var(--text-soft);
+    font-size: 1.05rem;
+}
+
+/* Como funciona: tres passos numerados */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    counter-reset: passo;
+}
+
+.step {
+    counter-increment: passo;
+}
+
+.step::before {
+    content: counter(passo);
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--ink);
+    color: var(--amber);
+    font-family: var(--font-display);
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+}
+
+.step h3 { margin-bottom: 0.4rem; }
+
+.step p {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+}
+
+/* O que ele faz: quatro cartoes */
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.feature {
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow);
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(13, 38, 60, 0.1);
+}
+
+.feature h3 { margin-bottom: 0.4rem; }
+
+.feature p {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+}
+
+/* Quem pediu menos movimento nao recebe transicao de cartao. */
+@media (prefers-reduced-motion: reduce) {
+    .feature { transition: none; }
+
+    .feature:hover { transform: none; }
+}

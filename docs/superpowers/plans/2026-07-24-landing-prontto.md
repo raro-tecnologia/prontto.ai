@@ -1202,25 +1202,42 @@ git commit -m "feat: breakpoints para tablet e celular"
 - Consumes: a página pronta das tarefas anteriores e `preview.sh` da Task 1.
 - Produces: nada consumido por tarefas seguintes.
 
-- [ ] **Step 1: Gerar a captura no formato social**
+- [ ] **Step 1: Gerar a captura no formato social, com a conversa visível**
 
-A proporção de compartilhamento é 1200×630. Rode:
+A captura precisa de um cuidado: a cena de chat começa vazia e as bolhas só entram
+ao longo do laço de 12 segundos. O navegador headless fotografa perto do instante
+zero, então uma captura direta sai com o card vazio, sempre. Repetir não adianta,
+porque a animação é determinística.
+
+A solução é congelar a linha do tempo num instante escolhido, usando
+`animation-delay` negativo numa cópia temporária da página. Em 5,5s de 12s as duas
+bolhas e o selo estão visíveis e o indicador de digitando já saiu.
 
 ```bash
 cd /Users/rchiarandi/projects/raro/prontto.ai
+python3 - <<'PY'
+html = open('index.html', encoding='utf-8').read()
+congelado = '<style>.bubble--in,.bubble--out,.chat-badge,.typing{animation-delay:-5.5s}</style>\n</head>'
+open('_og.html', 'w', encoding='utf-8').write(html.replace('</head>', congelado))
+PY
 docker run --rm -v "$PWD":/w zenika/alpine-chrome \
   --no-sandbox --disable-gpu --hide-scrollbars \
   --window-size=1200,630 \
   --screenshot=/w/og-image.png \
-  file:///w/index.html
+  file:///w/_og.html
+rm -f _og.html
 ls -la og-image.png
 ```
 
-Esperado: arquivo criado, mostrando o hero enquadrado em 1200×630.
+Esperado: `og-image.png` criado e `_og.html` removido. Confirme que o temporário
+sumiu com `git status`, que deve mostrar apenas `og-image.png` como novo arquivo.
 
 - [ ] **Step 2: Conferir o enquadramento**
 
-Abra `og-image.png`. A headline e o card de chat precisam estar visíveis e não cortados ao meio. Se o card de chat aparecer vazio (a captura pegou um vão da animação), rode o comando do Step 1 de novo.
+Abra `og-image.png`. Precisam estar visíveis e não cortados: a headline, o botão
+principal e o card de chat **com as duas bolhas e o selo "respondeu em 4 segundos"**.
+Se o card estiver vazio, o congelamento não foi aplicado: confira se o `<style>` foi
+mesmo injetado antes de `</head>` na cópia temporária.
 
 - [ ] **Step 3: Referenciar a imagem no `<head>`**
 

@@ -1,0 +1,79 @@
+/* Cabecalho */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(8, 26, 42, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ink-line);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    height: 68px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.brand svg {
+    height: 26px;
+    width: auto;
+}
+
+.header-cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.92rem;
+}
+
+/* Rodape */
+.site-footer {
+    background-color: var(--ink-deep);
+    color: var(--text-on-dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.site-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.footer-brand svg {
+    height: 30px;
+    width: auto;
+    color: #fff;
+    margin-bottom: var(--space-xs);
+}
+
+.footer-parent {
+    font-size: 0.95rem;
+}
+
+.footer-parent a {
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid var(--amber);
+    padding-bottom: 1px;
+}
+
+.footer-parent a:hover {
+    color: var(--amber);
+}
+
+.footer-contact {
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.footer-contact a:hover {
+    color: var(--amber);
+}

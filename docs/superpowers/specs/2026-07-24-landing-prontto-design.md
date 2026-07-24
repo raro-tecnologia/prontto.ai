@@ -37,11 +37,42 @@ A dor (lead perdido por demora) aparece em uma linha de subtítulo, não como ab
 
 ### Identidade
 
-- **Paleta:** base carvão/preta com acento âmbar-tangerina. Separa o produto do azul
-  corporativo da Raro e carrega o calor humano do "pronto?". Evita deliberadamente o
-  verde do WhatsApp, que é marca da Meta.
-- **Tipografia:** display em Instrument Sans, corpo em Inter (via Google Fonts).
-  Difere da Raro (Inter display + IBM Plex Sans corpo) mantendo legibilidade.
+A logo definiu a base: wordmark tipográfico geométrico, tinta `#0d263c` (navy profundo),
+com o duplo-t resolvido como **ligadura** — os dois "t" se cruzam formando um traço que
+lembra velocidade. Essa ligadura é o device da marca.
+
+- **Paleta:** navy `#0d263c` como base (vinda da logo) com acento âmbar-tangerina.
+  O navy separa o produto do azul vivo da Raro (`#2563eb`); o âmbar carrega o calor
+  humano do "pronto?" e destaca CTAs. Evita deliberadamente o verde do WhatsApp,
+  que é marca da Meta.
+- **Tipografia:** display em Plus Jakarta Sans, corpo em Inter (via Google Fonts).
+  Plus Jakarta Sans é geométrica-humanista e harmoniza com as formas circulares da
+  logo; a Raro usa Inter display + IBM Plex Sans corpo, então a diferença é audível.
+
+### Assets da marca
+
+Gerados a partir do export original (PNG achatado 1408×768, sem alfa, fundo texturizado):
+
+```
+logo/
+├── prontto-wordmark.svg           # vetorizado, fill="currentColor" — uso principal
+├── prontto-wordmark-navy.png      # 1023×257, fundo transparente
+├── prontto-wordmark-branco.png    # idem, para fundo escuro
+└── origem-export-1408.png         # export original, referência (não usado na página)
+favicon/
+├── favicon.ico                    # 16/32/48 multi-resolução
+├── favicon-16.png · favicon-32.png
+├── apple-touch-icon.png           # 180×180
+└── icon-512.png
+```
+
+O alfa foi extraído por matte (cobertura por canal entre fundo `#fbfaf8` e tinta
+`#0d263c`), com piso de ruído para descartar a textura de papel do fundo. O SVG saiu de
+vetorização com potrace e pesa 13 KB — contra 895 KB do export original.
+
+**Ícone usa o "P", não a ligadura.** A ligadura é bonita a 180px mas vira borrão a 32px
+e ilegível a 16px; o "P" se mantém nítido em todos os tamanhos. A ligadura fica como
+elemento decorativo na página, onde tem espaço para respirar.
 
 ## Estrutura da página
 
@@ -95,9 +126,6 @@ Três módulos, não cinco: `chat.css` fica isolado por ser a peça mais complex
 
 - **Número do WhatsApp:** +55 44 3170-1799 (fixo, Maringá). Como é fixo, a verificação
   na Cloud API tem que ser por chamada de voz, não SMS.
-- **Logo e favicon do Prontto:** ainda não existem. A primeira versão usa um wordmark
-  tipográfico (texto estilizado), sem símbolo. Substituir quando houver identidade
-  gráfica definitiva.
 - **og-image:** gerar a partir do hero depois que a página estiver fechada.
 
 ## Critérios de sucesso

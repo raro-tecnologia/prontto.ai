@@ -1222,8 +1222,8 @@ Acrescente as duas linhas logo abaixo de `<meta property="og:type" content="webs
 
 - [ ] **Step 4: Escrever o `README.md`**
 
-```markdown
-# Prontto — landing page
+````markdown
+# Prontto, landing page
 
 Site estático (HTML/CSS, sem build) do **Prontto**, produto de atendimento comercial
 automatizado por WhatsApp e Instagram da Raro Tecnologia. Publicado em
@@ -1287,7 +1287,7 @@ WhatsApp (44) 3170-1799 · [rarotecnologia.com](https://rarotecnologia.com)
 ## Deploy
 
 Push na branch `main` publica automaticamente via GitHub Pages.
-```
+````
 
 - [ ] **Step 5: Commit**
 

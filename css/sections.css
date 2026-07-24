@@ -74,6 +74,12 @@
     text-align: right;
 }
 
+.footer-contact a {
+    color: #fff;
+    border-bottom: 1px solid var(--amber);
+    padding-bottom: 1px;
+}
+
 .footer-contact a:hover {
     color: var(--amber);
 }
@@ -149,11 +155,6 @@
 .band-head {
     max-width: 40rem;
     margin-bottom: var(--space-xl);
-}
-
-.band-head p {
-    color: var(--text-soft);
-    font-size: 1.05rem;
 }
 
 /* Como funciona: tres passos numerados */

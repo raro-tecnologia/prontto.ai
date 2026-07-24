@@ -1,0 +1,6 @@
+# Arquivos que ficam no repositorio mas nao vao para o site publicado.
+exclude:
+  - docs
+  - logo
+  - preview.sh
+  - README.md

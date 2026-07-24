@@ -65,7 +65,7 @@
 .chat-clock {
     margin-left: auto;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     font-variant-numeric: tabular-nums;
 }
 
@@ -74,6 +74,11 @@
     flex-direction: column;
     gap: 0.55rem;
     min-height: 232px;
+}
+
+/* O paragrafo tem margem global; aqui o espacamento vem so do gap. */
+.chat-body p {
+    margin-bottom: 0;
 }
 
 .bubble {

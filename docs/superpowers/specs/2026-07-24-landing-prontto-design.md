@@ -70,6 +70,19 @@ O alfa foi extraído por matte (cobertura por canal entre fundo `#fbfaf8` e tint
 `#0d263c`), com piso de ruído para descartar a textura de papel do fundo. O SVG saiu de
 vetorização com potrace e pesa 13 KB — contra 895 KB do export original.
 
+**`prontto-wordmark.svg` é o arquivo-mestre da marca.** A logo foi gerada por IA
+(nano-banana) e não existe fonte vetorial anterior; o traçado é o vetor de referência.
+Qualquer variação futura parte dele.
+
+Inspeção de consistência: altura-x idêntica nos quatro glifos minúsculos (topo em y=87);
+os dois "o" diferem 1px em largura, dentro do ruído de rasterização; e letras redondas
+terminam 1px abaixo das retas — *overshoot*, correção óptica correta em tipografia. As
+formas são tipograficamente sólidas.
+
+Ressalva: formas tão regulares sugerem reprodução próxima de uma fonte geométrica
+comercial. A maioria das licenças permite uso em logotipo, mas se a marca ganhar
+tração vale um designer redesenhar as curvas para torná-la inequivocamente própria.
+
 **Ícone usa o "P", não a ligadura.** A ligadura é bonita a 180px mas vira borrão a 32px
 e ilegível a 16px; o "P" se mantém nítido em todos os tamanhos. A ligadura fica como
 elemento decorativo na página, onde tem espaço para respirar.

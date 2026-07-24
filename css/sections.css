@@ -223,3 +223,24 @@
 
     .feature:hover { transform: none; }
 }
+
+/* Faixa final */
+.closing {
+    background: radial-gradient(100% 140% at 50% 0%, var(--ink-soft) 0%, var(--ink-deep) 65%);
+    color: #fff;
+    padding: var(--space-2xl) 0;
+    text-align: center;
+}
+
+.closing h2 {
+    max-width: 24ch;
+    margin: 0 auto var(--space-sm);
+    text-wrap: balance;
+}
+
+.closing p {
+    max-width: 46ch;
+    margin: 0 auto var(--space-lg);
+    color: var(--text-on-dark);
+    font-size: 1.08rem;
+}

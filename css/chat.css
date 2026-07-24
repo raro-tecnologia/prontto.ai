@@ -192,3 +192,11 @@
         animation: none;
     }
 }
+
+/* No empilhamento do hero a cena passa a alinhar pela esquerda. */
+@media (max-width: 900px) {
+    .chat-scene {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}

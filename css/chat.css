@@ -1,1 +1,194 @@
-/* Cena de conversa animada do hero. */
+/* Cena de conversa do hero: uma linha do tempo de 12s em laco. */
+.chat-scene {
+    width: min(400px, 100%);
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--ink-line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm);
+    backdrop-filter: blur(6px);
+}
+
+.chat-top {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.35rem 0.35rem var(--space-sm);
+    border-bottom: 1px solid var(--ink-line);
+    margin-bottom: var(--space-sm);
+}
+
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--amber);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.chat-who {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+}
+
+.chat-who strong {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.chat-online {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chat-online::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #34d399;
+}
+
+.chat-clock {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-variant-numeric: tabular-nums;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    min-height: 232px;
+}
+
+.bubble {
+    max-width: 84%;
+    padding: 0.7rem 0.95rem;
+    border-radius: 16px;
+    font-size: 0.94rem;
+    line-height: 1.45;
+    opacity: 0;
+}
+
+.bubble--in {
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-bottom-left-radius: 5px;
+    animation: bubble-in 12s infinite;
+}
+
+.bubble--out {
+    align-self: flex-end;
+    background-color: var(--amber);
+    color: var(--ink);
+    font-weight: 500;
+    border-bottom-right-radius: 5px;
+    animation: bubble-out 12s infinite;
+}
+
+.typing {
+    align-self: flex-end;
+    display: flex;
+    gap: 4px;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border-bottom-right-radius: 5px;
+    opacity: 0;
+    animation: typing-window 12s infinite;
+}
+
+.typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    animation: typing-dot 1.2s infinite;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+.chat-badge {
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--amber);
+    opacity: 0;
+    animation: badge-in 12s infinite;
+}
+
+.chat-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--amber);
+}
+
+/* Linha do tempo: entra, segura, sai, espera o proximo ciclo. */
+@keyframes bubble-in {
+    0%, 3% { opacity: 0; transform: translateY(10px); }
+    7%, 86% { opacity: 1; transform: translateY(0); }
+    94%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes typing-window {
+    0%, 11% { opacity: 0; transform: translateY(10px); }
+    15%, 27% { opacity: 1; transform: translateY(0); }
+    30%, 100% { opacity: 0; transform: translateY(0); }
+}
+
+@keyframes bubble-out {
+    0%, 30% { opacity: 0; transform: translateY(10px); }
+    35%, 86% { opacity: 1; transform: translateY(0); }
+    94%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes badge-in {
+    0%, 37% { opacity: 0; }
+    42%, 86% { opacity: 1; }
+    94%, 100% { opacity: 0; }
+}
+
+@keyframes typing-dot {
+    0%, 60%, 100% { opacity: 0.35; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Sem animacao: mostra o estado final da conversa. */
+@media (prefers-reduced-motion: reduce) {
+    .bubble--in,
+    .bubble--out,
+    .chat-badge {
+        animation: none;
+        opacity: 1;
+    }
+
+    .typing {
+        display: none;
+    }
+
+    .typing span {
+        animation: none;
+    }
+}

@@ -2,5 +2,6 @@
 exclude:
   - docs
   - logo
+  - qr-code
   - preview.sh
   - README.md

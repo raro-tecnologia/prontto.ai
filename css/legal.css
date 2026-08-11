@@ -1,0 +1,125 @@
+/* Páginas legais (Termos, Privacidade) — mesmo sistema visual do site. */
+:root {
+  --ink: #0d263c;
+  --ink-deep: #081a2a;
+  --amber: #f6a623;
+  --amber-strong: #e08f10;
+  --paper: #fbfaf8;
+  --paper-alt: #f3f1ec;
+  --border: #e4e0d9;
+  --text: #0d263c;
+  --text-soft: #4d6072;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --shell: 820px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Topo */
+.legal-topbar {
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
+}
+.legal-topbar .wrap {
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand:hover { color: var(--ink-deep); }
+.back-link {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--amber-strong); }
+
+/* Documento */
+.doc {
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+.doc h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+.doc .updated {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin: 0 0 2.5rem;
+}
+.doc h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.28rem;
+  color: var(--ink);
+  margin: 2.6rem 0 0.8rem;
+  padding-top: 0.4rem;
+}
+.doc p, .doc li { color: var(--text); }
+.doc p { margin: 0 0 1rem; }
+.doc ul { margin: 0 0 1.2rem; padding-left: 1.3rem; }
+.doc li { margin: 0.35rem 0; }
+.doc a { color: var(--amber-strong); text-decoration: underline; text-underline-offset: 2px; }
+.doc strong { font-weight: 600; }
+.doc .intro { font-size: 1.05rem; color: var(--text-soft); }
+.doc hr {
+  border: none;
+  border-top: 2px solid var(--amber);
+  width: 48px;
+  margin: 0 0 2.5rem;
+}
+.contact-box {
+  background: var(--paper-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  margin-top: 1rem;
+}
+.contact-box p { margin: 0.25rem 0; }
+
+/* Rodapé */
+.legal-footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+}
+.legal-footer .wrap {
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.legal-footer a { color: #fff; text-decoration: none; }
+.legal-footer a:hover { color: var(--amber); }
+.legal-footer .links { display: flex; gap: 1.4rem; flex-wrap: wrap; }

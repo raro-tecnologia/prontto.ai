@@ -22,13 +22,17 @@
 
   O QR impresso na camiseta nunca muda: ele aponta para esta pagina.
   Sem JavaScript, o visitante cai no PADRAO (meta refresh e link abaixo).
+
+  O PADRAO fala em "o evento" sem nomear qual: assim o prompt de atendimento
+  reconhece a entrada do mesmo jeito que reconhece a de um evento nomeado, e
+  nao precisa ser alterado a cada edicao.
 -->
 <script>
   var EVENTOS = [
     { de: "2026-08-21", ate: "2026-08-21", msg: "Conheci no evento Masterboard e quero saber mais sobre o serviço de IA." },
     { de: "2026-08-27", ate: "2026-08-27", msg: "Conheci no Almoço do Scott e quero saber mais sobre o serviço de IA." }
   ];
-  var PADRAO = "Vim pela camiseta. Testa aí se você é Prontto mesmo.";
+  var PADRAO = "Conheci no evento e quero saber mais sobre o serviço de IA.";
   var NUMERO = "554431701799";
 
   (function () {
@@ -61,7 +65,7 @@
     location.replace(url);
   })();
 </script>
-<meta http-equiv="refresh" content="0; url=https://wa.me/554431701799?text=Vim%20pela%20camiseta.%20Testa%20a%C3%AD%20se%20voc%C3%AA%20%C3%A9%20Prontto%20mesmo.">
+<meta http-equiv="refresh" content="0; url=https://wa.me/554431701799?text=Conheci%20no%20evento%20e%20quero%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20IA.">
 
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -284,6 +288,6 @@
   </svg>
   </div>
   <p>Abrindo o WhatsApp&hellip;</p>
-  <a id="ir" href="https://wa.me/554431701799?text=Vim%20pela%20camiseta.%20Testa%20a%C3%AD%20se%20voc%C3%AA%20%C3%A9%20Prontto%20mesmo.">Continuar no WhatsApp</a>
+  <a id="ir" href="https://wa.me/554431701799?text=Conheci%20no%20evento%20e%20quero%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20IA.">Continuar no WhatsApp</a>
 </body>
 </html>

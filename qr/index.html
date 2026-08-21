@@ -7,17 +7,61 @@
 <title>Prontto</title>
 
 <!--
-  Destino do QR code impresso. Para mudar para onde o codigo leva, troque a
-  URL nos TRES lugares abaixo (script, meta refresh e link) e faca push.
-  O QR impresso continua valendo: ele aponta para esta pagina, nao para o destino.
+  AGENDA DE EVENTOS DO QR DA CAMISETA
 
-  O redirecionamento dispara no script abaixo, ainda no <head>, antes do
-  navegador chegar no <body>. O peso do logo nao atrasa nada.
+  A camiseta e usada o tempo todo, com ou sem evento. Por isso:
+    - DENTRO de uma faixa de datas, vale a mensagem daquele evento;
+    - FORA de todas as faixas, vale PADRAO (o caso mais comum).
+
+  Para trocar, edite SO o bloco abaixo e faca push. Cada evento tem inicio e
+  fim, entao evento de varios dias e uma linha so. Para pegar quem fotografa
+  o codigo e escaneia depois, e so esticar o "ate" alguns dias.
+
+  Datas em YYYY-MM-DD, pelo relogio de quem escaneia. Relogio absurdo cai no
+  PADRAO, e nao numa mensagem de evento errado.
+
+  O QR impresso na camiseta nunca muda: ele aponta para esta pagina.
+  Sem JavaScript, o visitante cai no PADRAO (meta refresh e link abaixo).
 -->
 <script>
-  location.replace("https://wa.me/554431701799?text=Conheci%20no%20evento%20Masterboard%20e%20quero%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20IA.");
+  var EVENTOS = [
+    { de: "2026-08-21", ate: "2026-08-21", msg: "Conheci no evento Masterboard e quero saber mais sobre o serviço de IA." },
+    { de: "2026-08-27", ate: "2026-08-27", msg: "Conheci no Almoço do Scott e quero saber mais sobre o serviço de IA." }
+  ];
+  var PADRAO = "Vim pela camiseta. Testa aí se você é Prontto mesmo.";
+  var NUMERO = "554431701799";
+
+  (function () {
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    var hoje = null;
+    try {
+      var d = new Date(), ano = d.getFullYear();
+      if (ano >= 2026 && ano <= 2100) {
+        hoje = ano + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+      }
+    } catch (e) {}
+
+    var msg = PADRAO;
+    if (hoje) {
+      for (var i = 0; i < EVENTOS.length; i++) {
+        var e = EVENTOS[i];
+        if (e && e.de <= hoje && hoje <= e.ate) { msg = e.msg; break; }
+      }
+    }
+
+    var url = "https://wa.me/" + NUMERO + "?text=" + encodeURIComponent(msg);
+
+    // So roda se o replace abaixo nao levar a pagina embora.
+    document.addEventListener("DOMContentLoaded", function () {
+      var a = document.getElementById("ir");
+      if (a) { a.href = url; }
+    });
+
+    location.replace(url);
+  })();
 </script>
-<meta http-equiv="refresh" content="0; url=https://wa.me/554431701799?text=Conheci%20no%20evento%20Masterboard%20e%20quero%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20IA.">
+<meta http-equiv="refresh" content="0; url=https://wa.me/554431701799?text=Vim%20pela%20camiseta.%20Testa%20a%C3%AD%20se%20voc%C3%AA%20%C3%A9%20Prontto%20mesmo.">
 
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -240,6 +284,6 @@
   </svg>
   </div>
   <p>Abrindo o WhatsApp&hellip;</p>
-  <a href="https://wa.me/554431701799?text=Conheci%20no%20evento%20Masterboard%20e%20quero%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20IA.">Continuar no WhatsApp</a>
+  <a id="ir" href="https://wa.me/554431701799?text=Vim%20pela%20camiseta.%20Testa%20a%C3%AD%20se%20voc%C3%AA%20%C3%A9%20Prontto%20mesmo.">Continuar no WhatsApp</a>
 </body>
 </html>

@@ -1,0 +1,24 @@
+# Prontto
+
+> Prontto é um CRM com agentes de IA para WhatsApp (API Oficial com Coexistência) e Instagram. Atende leads em segundos, 24/7, entende texto, áudio e imagem, qualifica a conversa e preenche o CRM automaticamente. Desenvolvido pela Raro Tecnologia (https://rarotecnologia.com), Parceiro Oficial Meta (Meta Business Partner, especialidade WhatsApp), CNPJ 65.977.227/0001-37.
+
+## Principais capacidades
+
+- Agente de IA no WhatsApp via API Oficial do WhatsApp Business, com Coexistência (WhatsApp CoEx): o mesmo número funciona no app WhatsApp Business no celular e na API ao mesmo tempo.
+- Agente de IA no Instagram Direct via API Oficial do Instagram.
+- Preenchimento automático do CRM: extrai nome, empresa, necessidade, orçamento, prazo e interesse durante a conversa e cria o card no funil.
+- Multimodal: transcreve áudios de qualquer duração e interpreta imagens enviadas pelo cliente.
+- Follow-up automático e transbordo para atendimento humano no momento certo.
+
+## Páginas
+
+- [Home](https://prontto.ai/): visão geral, diferenciais e perguntas frequentes.
+- [Coexistência no WhatsApp](https://prontto.ai/coexistencia-whatsapp/): como funciona a API Oficial com o app no mesmo número, comparada com a API tradicional e ferramentas não oficiais.
+- [CRM no WhatsApp com IA](https://prontto.ai/crm-whatsapp-ia/): CRM preenchido pelo agente de IA para equipes comerciais.
+- [Termos de Serviço](https://prontto.ai/terms.html)
+- [Política de Privacidade](https://prontto.ai/privacy.html)
+
+## Contato
+
+- WhatsApp: +55 44 3170-1799 (https://wa.me/554431701799)
+- E-mail: contato@prontto.ai

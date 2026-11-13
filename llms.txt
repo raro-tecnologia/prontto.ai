@@ -1,6 +1,6 @@
 # Prontto
 
-> Prontto é um CRM com agentes de IA para WhatsApp (API Oficial com Coexistência) e Instagram. Atende leads em segundos, 24/7, entende texto, áudio e imagem, qualifica a conversa e preenche o CRM automaticamente. Desenvolvido pela Raro Tecnologia (https://rarotecnologia.com), Parceiro Oficial Meta (Meta Business Partner, especialidade WhatsApp), CNPJ 65.977.227/0001-37.
+> Prontto é um CRM com agentes de IA para WhatsApp (API Oficial com Coexistência) e Instagram. Atende leads em segundos, 24/7, entende texto, áudio e imagem, qualifica a conversa e preenche o CRM automaticamente. Desenvolvido pela Raro Tecnologia (https://rarotecnologia.com), Meta Business Partner (especialidade WhatsApp) e Provedora de Tecnologia (Tech Provider) homologada pela Meta, CNPJ 65.977.227/0001-37.
 
 ## Principais capacidades
 

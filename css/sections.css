@@ -317,6 +317,20 @@
 
 .proof-link:hover { color: var(--amber-strong); }
 
+/* Link dentro de frase: segue o fluxo do texto */
+p .proof-link {
+    display: inline;
+    margin-top: 0;
+}
+
+.proof-cred {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
 /* Perguntas frequentes (accordion nativo com <details>) */
 .faq {
     max-width: 52rem;

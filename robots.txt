@@ -1,42 +1,57 @@
-# Buscadores e assistentes de IA sao bem-vindos em todo o site.
+# Buscadores e assistentes de IA sao bem-vindos em todo o site, exceto /brands/
+# (fotos e imagens usadas em assinatura de e-mail, sem valor de busca).
+# Cada grupo precisa do Disallow: o crawler segue so o grupo mais especifico.
 User-agent: *
 Allow: /
+Disallow: /brands/
 
 # Crawlers de IA liberados explicitamente
 User-agent: GPTBot
 Allow: /
+Disallow: /brands/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /brands/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /brands/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /brands/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /brands/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /brands/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /brands/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /brands/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /brands/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /brands/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /brands/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /brands/
 
 Sitemap: https://prontto.ai/sitemap.xml

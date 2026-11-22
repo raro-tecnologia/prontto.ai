@@ -1,0 +1,136 @@
+/* Página de preços: dois planos lado a lado. O Personalizado vem escuro porque é o que a maioria contrata. */
+.plans {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+    align-items: stretch;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow);
+}
+
+.plan--custom {
+    background: radial-gradient(120% 120% at 100% 0%, var(--ink-soft) 0%, var(--ink-deep) 70%);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+}
+
+.plan-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+}
+
+.plan-for {
+    color: var(--text-soft);
+    margin-bottom: var(--space-md);
+}
+
+.plan--custom .plan-for { color: var(--text-on-dark); }
+
+.plan-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.plan--custom .plan-price { border-bottom-color: var(--ink-line); }
+
+.plan-from {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    width: 100%;
+}
+
+.plan--custom .plan-from { color: var(--text-on-dark); }
+
+.plan-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.plan--custom .plan-value { color: var(--amber); }
+
+.plan-period {
+    font-size: 1rem;
+    color: var(--text-soft);
+}
+
+.plan--custom .plan-period { color: var(--text-on-dark); }
+
+.plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    display: grid;
+    gap: 0.6rem;
+    align-content: start;
+    flex: 1;
+}
+
+.plan-list li {
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.plan-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.5em;
+    width: 0.7rem;
+    height: 0.4rem;
+    border-left: 2px solid var(--amber-strong);
+    border-bottom: 2px solid var(--amber-strong);
+    transform: rotate(-45deg);
+}
+
+.plan--custom .plan-list li::before { border-color: var(--amber); }
+
+.plan .btn { align-self: flex-start; }
+
+.plan-foot {
+    margin-top: var(--space-md);
+    font-size: 0.92rem;
+    color: var(--text-soft);
+}
+
+.price-factors {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+}
+
+.price-factors .feature:hover { transform: none; }
+
+@media (max-width: 760px) {
+    .plans, .price-factors { grid-template-columns: minmax(0, 1fr); }
+}
+
+.plan--custom .plan-foot { color: var(--text-on-dark); }
+
+.plan .btn--ghost {
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.plan .btn--ghost:hover {
+    background-color: var(--ink);
+    color: #fff;
+}

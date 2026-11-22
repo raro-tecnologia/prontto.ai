@@ -5,7 +5,7 @@
 ## Principais capacidades
 
 - Agente de IA no WhatsApp via API Oficial do WhatsApp Business, com Coexistência (WhatsApp CoEx): o mesmo número funciona no app WhatsApp Business no celular e na API ao mesmo tempo.
-- Agente de IA no Instagram Direct via API Oficial do Instagram.
+- Agente de IA no Instagram via API Oficial do Instagram: atende o Direct, responde comentários, chama no Direct quem comenta uma palavra-chave e responde menções nos Stories.
 - Preenchimento automático do CRM: extrai nome, empresa, necessidade, orçamento, prazo e interesse durante a conversa e cria o card no funil.
 - Multimodal: transcreve áudios de qualquer duração e interpreta imagens enviadas pelo cliente.
 - Follow-up automático e transbordo para atendimento humano no momento certo.
@@ -15,6 +15,7 @@
 - [Home](https://prontto.ai/): visão geral, diferenciais e perguntas frequentes.
 - [Coexistência no WhatsApp](https://prontto.ai/coexistencia-whatsapp/): como funciona a API Oficial com o app no mesmo número, comparada com a API tradicional e ferramentas não oficiais.
 - [CRM no WhatsApp com IA](https://prontto.ai/crm-whatsapp-ia/): CRM preenchido pelo agente de IA para equipes comerciais.
+- [Agente de IA no Instagram](https://prontto.ai/agente-ia-instagram/): atende o Direct, responde comentários, chama no Direct quem comenta uma palavra-chave e responde menções nos Stories, com os leads no mesmo funil do WhatsApp.
 - [Termos de Serviço](https://prontto.ai/terms.html)
 - [Política de Privacidade](https://prontto.ai/privacy.html)
 

@@ -1,0 +1,154 @@
+/* Pagina /agente-ia-instagram/: cena "comentou, chamou no Direct" e as tres portas de entrada.
+   Reaproveita a cena de chat (chat.css) e a linha do tempo de 12s; aqui so entram as pecas novas. */
+
+/* Comentario publico no post: e o gatilho da conversa */
+.ig-comment {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 0.6rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px dashed var(--ink-line);
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--text-on-dark);
+    opacity: 0;
+    animation: bubble-in 12s infinite;
+}
+
+.ig-comment-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--ink-soft);
+    border: 2px solid var(--amber);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.ig-comment-where {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.ig-comment strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* A palavra-chave: o que dispara o agente */
+.ig-keyword {
+    display: inline-block;
+    margin-left: 0.2rem;
+    padding: 0.05rem 0.5rem;
+    border-radius: 6px;
+    background-color: var(--amber);
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+/* Resposta publica do perfil, logo abaixo do comentario */
+.ig-reply {
+    align-self: stretch;
+    margin-left: 2.4rem;
+    padding: 0.1rem 0 0.1rem 0.75rem;
+    border-left: 2px solid var(--amber);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #fff;
+    opacity: 0;
+    animation: ig-reply 12s infinite;
+}
+
+/* Divisor "abriu o Direct" entre o comentario publico e a conversa privada */
+.ig-handoff {
+    align-self: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    opacity: 0;
+    animation: ig-handoff 12s infinite;
+}
+
+/* Mesma linha do tempo de 12s da cena: comentario, resposta publica, Direct, card */
+@keyframes ig-reply {
+    0%, 11% { opacity: 0; transform: translateY(6px); }
+    15%, 86% { opacity: 1; transform: translateY(0); }
+    94%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes ig-handoff {
+    0%, 22% { opacity: 0; }
+    26%, 86% { opacity: 1; }
+    94%, 100% { opacity: 0; }
+}
+
+/* Tres portas de entrada: Direct, comentario e mencao nos Stories */
+.doors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.door {
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-lg) var(--space-md);
+    box-shadow: var(--shadow);
+}
+
+.door-glyph {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--ink);
+    color: var(--amber);
+    margin-bottom: var(--space-sm);
+}
+
+.door-glyph svg {
+    width: 22px;
+    height: 22px;
+}
+
+.door h3 { margin-bottom: 0.4rem; }
+
+.door p {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+}
+
+/* Exemplo do que o lead escreve e do que o agente faz */
+.door-example {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
+    color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ig-comment {
+        animation: none;
+        opacity: 1;
+    }
+
+    .ig-reply,
+    .ig-handoff {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .doors { grid-template-columns: 1fr; }
+}

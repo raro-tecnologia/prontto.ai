@@ -16,8 +16,15 @@
 - [Coexistência no WhatsApp](https://prontto.ai/coexistencia-whatsapp/): como funciona a API Oficial com o app no mesmo número, comparada com a API tradicional e ferramentas não oficiais.
 - [CRM no WhatsApp com IA](https://prontto.ai/crm-whatsapp-ia/): CRM preenchido pelo agente de IA para equipes comerciais.
 - [Agente de IA no Instagram](https://prontto.ai/agente-ia-instagram/): atende o Direct, responde comentários, chama no Direct quem comenta uma palavra-chave e responde menções nos Stories, com os leads no mesmo funil do WhatsApp.
+- [Preços](https://prontto.ai/precos/): plano Essencial a partir de R$ 279/mês e Personalizado a partir de R$ 979/mês.
 - [Termos de Serviço](https://prontto.ai/terms.html)
 - [Política de Privacidade](https://prontto.ai/privacy.html)
+
+## Preços
+
+- Essencial: a partir de R$ 279 por mês, com 1 conta conectada (WhatsApp ou Instagram). O cliente configura e opera a plataforma por conta própria.
+- Personalizado: a partir de R$ 979 por mês. A Raro Tecnologia configura o agente de IA, o funil e as integrações para o negócio; o valor final depende de canais, volume, integrações e etapas do atendimento.
+- Mensagens de modelo (template) da API Oficial do WhatsApp não estão incluídas: são cobradas pela Meta conforme a tabela oficial e pagas pelo cliente direto à Meta, sem custo adicional do Prontto.
 
 ## Contato
 

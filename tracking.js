@@ -7,12 +7,15 @@
   Alem do pageview padrao, todo clique em link de WhatsApp (wa.me) dispara:
     - GA4:   evento "whatsapp_click" (marcar como conversao no painel do GA4)
     - Pixel: evento padrao "Contact"
+    - Google Ads: conversao "Prontto · Clique no WhatsApp (prontto.ai)" (conta RaRo 340-486-6437)
   O parametro "location" diz de que parte da pagina veio o clique
   (id da <section> mais proxima, ou header/footer).
 */
 (function () {
   var GA4_ID = "G-LHW7TZGK24";
   var META_PIXEL_ID = "2090476029013728";
+  var GADS_ID = "AW-18552685528";
+  var GADS_WHATSAPP = GADS_ID + "/GdgMCNXo9rAdENiHzo5F";
 
   /* ---- GA4 (gtag.js) ---- */
   window.dataLayer = window.dataLayer || [];
@@ -20,6 +23,7 @@
   window.gtag = gtag;
   gtag("js", new Date());
   gtag("config", GA4_ID);
+  gtag("config", GADS_ID);
 
   var s = document.createElement("script");
   s.async = true;
@@ -53,5 +57,6 @@
       transport_type: "beacon"
     });
     fbq("track", "Contact", { content_name: location });
+    gtag("event", "conversion", { send_to: GADS_WHATSAPP, transport_type: "beacon" });
   });
 })();

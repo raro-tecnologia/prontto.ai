@@ -24,7 +24,7 @@
 
 - Essencial: a partir de R$ 279 por mês, com 1 conta conectada (WhatsApp ou Instagram). O cliente configura e opera a plataforma por conta própria.
 - Personalizado: a partir de R$ 979 por mês. A Raro Tecnologia configura o agente de IA, o funil e as integrações para o negócio; o valor final depende de canais, volume, integrações e etapas do atendimento.
-- Mensagens de modelo (template) da API Oficial do WhatsApp são cobradas pela Meta à parte, conforme a tabela oficial.
+- Mensagens de modelo (template) da API Oficial do WhatsApp não estão incluídas: são cobradas pela Meta conforme a tabela oficial e pagas pelo cliente direto à Meta.
 
 ## Contato
 

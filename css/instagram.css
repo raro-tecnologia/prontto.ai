@@ -54,13 +54,39 @@
     letter-spacing: 0.02em;
 }
 
+/* Resposta publica do perfil, logo abaixo do comentario */
+.ig-reply {
+    align-self: stretch;
+    margin-left: 2.4rem;
+    padding: 0.1rem 0 0.1rem 0.75rem;
+    border-left: 2px solid var(--amber);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #fff;
+    opacity: 0;
+    animation: ig-reply 12s infinite;
+}
+
 /* Divisor "abriu o Direct" entre o comentario publico e a conversa privada */
 .ig-handoff {
     align-self: center;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.55);
     opacity: 0;
-    animation: typing-window 12s infinite;
+    animation: ig-handoff 12s infinite;
+}
+
+/* Mesma linha do tempo de 12s da cena: comentario, resposta publica, Direct, card */
+@keyframes ig-reply {
+    0%, 11% { opacity: 0; transform: translateY(6px); }
+    15%, 86% { opacity: 1; transform: translateY(0); }
+    94%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes ig-handoff {
+    0%, 22% { opacity: 0; }
+    26%, 86% { opacity: 1; }
+    94%, 100% { opacity: 0; }
 }
 
 /* Tres portas de entrada: Direct, comentario e mencao nos Stories */
@@ -116,6 +142,7 @@
         opacity: 1;
     }
 
+    .ig-reply,
     .ig-handoff {
         animation: none;
         opacity: 1;
